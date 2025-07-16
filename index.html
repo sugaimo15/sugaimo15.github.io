@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>デジタルスタンプラリー - 地域を楽しく巡る新体験</title>
+    
+    <!-- AdSense認証タグ -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="QRコードを使った革新的なデジタルスタンプラリーサービス。地域活性化、観光振興、イベント運営に最適。無料で利用可能、簡単操作でスマートフォン一つで参加できます。">
+    <meta name="keywords" content="スタンプラリー, デジタル, QRコード, 地域活性化, 観光振興, イベント, モバイル, アプリ">
+    <meta name="author" content="Digital Stamp Rally">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="デジタルスタンプラリー - 地域を楽しく巡る新体験">
+    <meta property="og:description" content="QRコードを使った革新的なデジタルスタンプラリーサービス。地域活性化と観光振興の新しいソリューションです。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sugaimo15.github.io">
+    <meta property="og:image" content="https://sugaimo15.github.io/assets/stamp-rally-og.jpg">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="デジタルスタンプラリー - 地域を楽しく巡る新体験">
+    <meta name="twitter:description" content="QRコードを使った革新的なデジタルスタンプラリーサービス">
+    
+    <!-- Google AdSenseスクリプト -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8155851762078254"
+         crossorigin="anonymous"></script>
+         
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ヘッダー・ナビゲーション */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #10b981;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #10b981;
+        }
+        
+        .cta-button {
+            background: #10b981;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #059669;
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: #fff;
+            color: #10b981;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            padding: 15px 30px;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: #fff;
+            color: #10b981;
+        }
+        
+        /* 特徴セクション */
+        .features {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+        
+        .feature-card p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+        
+        /* 使い方セクション */
+        .how-it-works {
+            padding: 100px 0;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            background: #10b981;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+        
+        .step p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        /* 事例セクション */
+        .use-cases {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+        
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .use-case {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .use-case h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+        
+        .use-case p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        
+        /* CTAセクション */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        /* フッター */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 30px;
+            text-align: center;
+            color: #94a3b8;
+        }
+        
+        .ad-container {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin: 60px 0;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .ad-container h3 {
+            margin-bottom: 20px;
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+        
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .features-grid,
+            .steps-grid,
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo">📱 スタンプラリー</a>
+                <ul class="nav-links">
+                    <li><a href="#features">特徴</a></li>
+                    <li><a href="#how-it-works">使い方</a></li>
+                    <li><a href="#use-cases">活用事例</a></li>
+                    <li><a href="/articles/">記事</a></li>
+                    <li><a href="/contact/">お問い合わせ</a></li>
+                </ul>
+                <a href="/stamp-rally-web/" class="cta-button">今すぐ体験</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="container">
+            <h1>地域を楽しく巡る<br>新しいスタンプラリー体験</h1>
+            <p class="subtitle">QRコードを使ったデジタルスタンプラリーで、観光地や商店街を盛り上げませんか？<br>スマートフォン一つで始められる、新しい地域活性化のソリューションです。</p>
+            <div class="hero-buttons">
+                <a href="/stamp-rally-web/" class="btn-primary">🚀 無料で始める</a>
+                <a href="#features" class="btn-secondary">📖 詳しく見る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense 広告エリア1 -->
+    <div class="ad-container">
+        <div class="container">
+            <h3>スポンサー</h3>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8155851762078254"
+                 data-ad-slot="AUTO"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+    </div>
+
+    <!-- 特徴セクション -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">なぜデジタルスタンプラリーなのか？</h2>
+            <p class="section-subtitle">従来の紙のスタンプラリーを革新し、参加者にも運営者にもメリットをもたらします</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>簡単操作</h3>
+                    <p>スマートフォンでQRコードをスキャンするだけ。アプリのインストールは不要で、Webブラウザですぐに始められます。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>リアルタイム分析</h3>
+                    <p>参加者の行動データをリアルタイムで収集・分析。イベントの改善や効果測定に活用できます。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>環境にやさしい</h3>
+                    <p>紙のスタンプカードが不要でエコフレンドリー。印刷コストも削減できて運営側にもメリットがあります。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>特典システム</h3>
+                    <p>完走時の特典コード発行や段階的な報酬システムで、参加者のモチベーションを維持します。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>カスタマイズ可能</h3>
+                    <p>イベントの規模や目的に応じて、スポット数や特典内容を自由にカスタマイズできます。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>コスト効率</h3>
+                    <p>初期費用を抑えて高品質なスタンプラリーを実現。小規模イベントから大規模な観光振興まで対応可能です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使い方セクション -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">3ステップで簡単スタート</h2>
+            <p class="section-subtitle">参加者も運営者も、誰でも簡単に始められます</p>
+            
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>QRコード作成</h3>
+                    <p>管理者画面でイベント情報を入力し、各スポット用のQRコードを生成します。</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>QRコード設置</h3>
+                    <p>生成したQRコードを各スポットに設置。印刷して掲示するだけで準備完了です。</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>スタンプ収集</h3>
+                    <p>参加者がスマートフォンでQRコードをスキャンしてスタンプを収集。完走で特典ゲット！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense 広告エリア2 -->
+    <div class="ad-container">
+        <div class="container">
+            <h3>おすすめコンテンツ</h3>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8155851762078254"
+                 data-ad-slot="AUTO"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+    </div>
+
+    <!-- 活用事例セクション -->
+    <section id="use-cases" class="use-cases">
+        <div class="container">
+            <h2 class="section-title">様々なシーンで活用可能</h2>
+            <p class="section-subtitle">地域活性化から企業イベントまで、幅広い用途に対応</p>
+            
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <h3>🏞️ 観光地振興</h3>
+                    <p>観光スポットを巡るスタンプラリーで、観光客の周遊を促進。隠れた名所の発見にもつながります。</p>
+                </div>
+                
+                <div class="use-case">
+                    <h3>🏪 商店街活性化</h3>
+                    <p>商店街の各店舗を巡るイベントで、新規顧客の獲得と地域経済の活性化を実現します。</p>
+                </div>
+                
+                <div class="use-case">
+                    <h3>🎓 教育・学習</h3>
+                    <p>博物館や歴史的建造物を巡る学習型スタンプラリーで、楽しみながら知識を深められます。</p>
+                </div>
+                
+                <div class="use-case">
+                    <h3>🎪 イベント運営</h3>
+                    <p>文化祭や地域のお祭りで、来場者参加型のコンテンツとして活用できます。</p>
+                </div>
+                
+                <div class="use-case">
+                    <h3>🏢 企業イベント</h3>
+                    <p>展示会やオープンハウスでの来場者誘導や、社内研修での活用も可能です。</p>
+                </div>
+                
+                <div class="use-case">
+                    <h3>🌸 季節イベント</h3>
+                    <p>桜まつりや紅葉狩りなど、季節の魅力を活かしたイベントで地域の魅力をアピール。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTAセクション -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>あなたの地域でも始めませんか？</h2>
+            <p>デジタルスタンプラリーで新しい地域体験を創造しましょう</p>
+            <div class="hero-buttons">
+                <a href="/stamp-rally-web/" class="btn-primary">今すぐ体験する</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>サービス</h3>
+                    <a href="/stamp-rally-web/">スタンプラリー体験</a>
+                    <a href="/articles/stamp-rally-guide.html">使い方ガイド</a>
+                    <a href="/articles/event-case-studies.html">成功事例</a>
+                    <a href="/articles/app-development-guide.html">開発について</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>情報</h3>
+                    <a href="/articles/">記事一覧</a>
+                    <a href="/articles/stamp-rally-guide.html">活用法</a>
+                    <a href="/articles/event-case-studies.html">導入事例</a>
+                    <a href="/contact/">よくある質問</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>サポート</h3>
+                    <a href="/contact/">お問い合わせ</a>
+                    <a href="/privacy/">プライバシーポリシー</a>
+                    <a href="https://github.com/sugaimo15" target="_blank">GitHub</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>デジタルスタンプラリー</h3>
+                    <p>地域を楽しく巡る新しい体験を提供し、観光振興と地域活性化に貢献します。</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Digital Stamp Rally. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AdSense自動広告の初期化 -->
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8155851762078254",
+              enable_page_level_ads: true
+         });
+         
+         // 手動広告の初期化
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    
+    <!-- スムーススクロール -->
+    <script>
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    
+    <!-- Google Analytics (オプション) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>
